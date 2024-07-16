@@ -1,2 +1,7 @@
 *** Settings ***
-Documentation    Hello Robot
+Documentation        Hello Robot
+
+
+*** Test Cases ***
+Deve mostrar mensagem de boas vindas
+    Log    Hello universo Robot
