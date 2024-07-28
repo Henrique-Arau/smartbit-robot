@@ -1,17 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.11.4 on win32)" generated="20240716 18:07:06.598" rpa="false" schemaversion="4">
-<suite id="s1" name="Hello" source="C:\QAx\projects\smartbit-robot\hello.robot">
-<test id="s1-t1" name="Deve mostrar mensagem de boas vindas" line="6">
-<kw name="Log" library="BuiltIn">
-<arg>Hello universo Robot</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20240716 18:07:06.641" level="INFO">Hello universo Robot</msg>
-<status status="PASS" starttime="20240716 18:07:06.641" endtime="20240716 18:07:06.641"/>
+<robot generator="Robot 7.0 (Python 3.12.0 on win32)" generated="2024-07-28T08:53:21.247776" rpa="false" schemaversion="5">
+<suite id="s1" name="Slogan" source="c:\QAx\projects\smartbit-robot\slogan.robot">
+<test id="s1-t1" name="Deve exibir o slogan na Landing Page" line="7">
+<kw name="New Browser" owner="Browser">
+<msg time="2024-07-28T08:53:22.915754" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\QAx\\projects\\smartbit-robot\\browser\\traces\\84b89664-d37c-48f5-90aa-69352da4e8ed"}</msg>
+<msg time="2024-07-28T08:53:23.314116" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\QAx\\projects\\smartbit-robot\\browser\\traces\\84b89664-d37c-48f5-90aa-69352da4e8ed"}</msg>
+<arg>browser=chromium</arg>
+<arg>headless=False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2024-07-28T08:53:22.914063" elapsed="0.400053"/>
 </kw>
-<status status="PASS" starttime="20240716 18:07:06.640" endtime="20240716 18:07:06.642"/>
+<kw name="New Page" owner="Browser">
+<msg time="2024-07-28T08:53:24.392245" level="INFO">Successfully initialized new page object and opened url: http://localhost:3000</msg>
+<msg time="2024-07-28T08:53:24.392245" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>http://localhost:3000</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2024-07-28T08:53:23.331135" elapsed="1.062103"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2024-07-28T08:53:24.521098" level="INFO">Text: 'Sua Jornada Fitness Começa aqui!'</msg>
+<arg>css=.headline h2</arg>
+<arg>equal</arg>
+<arg>Sua Jornada Fitness Começa aqui!</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-07-28T08:53:24.394247" elapsed="0.126851"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-28T08:53:29.523456" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-28T08:53:24.522096" elapsed="5.001360"/>
+</kw>
+<status status="PASS" start="2024-07-28T08:53:22.905976" elapsed="6.618474"/>
 </test>
-<doc>Hello Robot</doc>
-<status status="PASS" starttime="20240716 18:07:06.601" endtime="20240716 18:07:06.643"/>
+<doc>Teste para verificar o slogan da smartbit na webapp</doc>
+<status status="PASS" start="2024-07-28T08:53:21.255776" elapsed="8.442251"/>
 </suite>
 <statistics>
 <total>
@@ -20,7 +50,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Hello">Hello</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Slogan">Slogan</stat>
 </suite>
 </statistics>
 <errors>
