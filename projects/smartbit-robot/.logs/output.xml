@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.12.0 on win32)" generated="2024-09-09T15:47:26.387499" rpa="false" schemaversion="5">
+<suite id="s1" name="Signup" source="C:\QAx\projects\smartbit-robot\tests\signup.robot">
+<test id="s1-t1" name="Deve iniciar o cadastro do clientes" line="8">
+<kw name="New Browser" owner="Browser">
+<msg time="2024-09-09T15:47:28.045486" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\QAx\\projects\\smartbit-robot\\.logs\\browser\\traces\\3dc3fa42-54b0-4621-903b-783a9dc8272c"}</msg>
+<msg time="2024-09-09T15:47:28.819998" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\QAx\\projects\\smartbit-robot\\.logs\\browser\\traces\\3dc3fa42-54b0-4621-903b-783a9dc8272c"}</msg>
+<arg>browser=chromium</arg>
+<arg>headless=False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2024-09-09T15:47:28.044485" elapsed="0.775513"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2024-09-09T15:47:30.359000" level="INFO">Successfully initialized new page object and opened url: http://localhost:3000</msg>
+<msg time="2024-09-09T15:47:30.359000" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>http://localhost:3000</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2024-09-09T15:47:28.832000" elapsed="1.527000"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2024-09-09T15:47:30.512012" level="INFO">Text: 'Faça seu cadastro e venha para a Smartbit!'</msg>
+<arg>css=#signup h2</arg>
+<arg>equal</arg>
+<arg>Faça seu cadastro e venha para a Smartbit!</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-09-09T15:47:30.360003" elapsed="0.152009"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-09-09T15:47:30.512998" level="INFO">Fills the text 'Henrique Araujo' in the given field.</msg>
+<arg>id=name</arg>
+<arg>Henrique Araujo</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-09-09T15:47:30.512012" elapsed="0.072989"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-09-09T15:47:30.586996" level="INFO">Fills the text 'teste01@teste.com' in the given field.</msg>
+<arg>id=email</arg>
+<arg>teste01@teste.com</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-09-09T15:47:30.585997" elapsed="0.044014"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-09-09T15:47:30.632000" level="INFO">Fills the text '53623239038' in the given field.</msg>
+<arg>id=document</arg>
+<arg>53623239038</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-09-09T15:47:30.630999" elapsed="0.034006"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2024-09-09T15:47:30.668006" level="INFO">Clicks the element 'css=button &gt;&gt; text=Cadastrar'.</msg>
+<arg>css=button &gt;&gt; text=Cadastrar</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-09-09T15:47:30.667007" elapsed="0.185995"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2024-09-09T16:09:30.914832" level="FAIL">ConnectionError: Playwright process has been terminated with code 130</msg>
+<arg>text=Falta pouco para fazer parte da familia Smartbit!</arg>
+<arg>visible</arg>
+<arg>22m</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="FAIL" start="2024-09-09T15:47:30.854001" elapsed="1320.135835">ConnectionError: Playwright process has been terminated with code 130</status>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>10</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-09-09T16:09:31.009842" elapsed="0.001996"/>
+</kw>
+<status status="FAIL" start="2024-09-09T15:47:28.037497" elapsed="1322.981341">ConnectionError: Playwright process has been terminated with code 130</status>
+</test>
+<doc>Cenários de testes de pré-cadastro de clientes</doc>
+<status status="FAIL" start="2024-09-09T15:47:26.390499" elapsed="1324.776070"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Signup">Signup</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-09-09T16:09:31.158594" level="ERROR">Calling method '_end_test' of listener 'Browser' failed: ConnectionError: Playwright process has been terminated with code 130</msg>
+<msg time="2024-09-09T16:09:31.168922" level="ERROR">Calling method '_end_suite' of listener 'Browser' failed: ConnectionError: Playwright process has been terminated with code 130</msg>
+</errors>
+</robot>
