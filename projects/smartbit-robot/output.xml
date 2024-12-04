@@ -1,33 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.12.0 on win32)" generated="2024-12-04T11:14:09.878711" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0.1 (Python 3.12.0 on win32)" generated="2024-12-04T16:12:45.902809" rpa="false" schemaversion="5">
 <suite id="s1" name="Signup" source="c:\QAx\projects\smartbit-robot\tests\signup.robot">
-<test id="s1-t1" name="Deve iniciar o cadastro do clientes" line="11">
-<kw name="Get Fake Account" owner="Account">
-<msg time="2024-12-04T11:14:12.933234" level="INFO">${account} = {'name': 'Henrique Araujo', 'email': 'teste00@teste.com', 'document': '10892375027'}</msg>
-<var>${account}</var>
-<status status="PASS" start="2024-12-04T11:14:12.932228" elapsed="0.008022"/>
-</kw>
+<test id="s1-t1" name="Campo nome dese ser obrigatorio" line="31">
 <kw name="New Browser" owner="Browser">
-<msg time="2024-12-04T11:14:12.945239" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\QAx\\projects\\smartbit-robot\\browser\\traces\\3e3342d0-669c-466b-b09d-2acc4fbd7225"}</msg>
-<msg time="2024-12-04T11:14:13.578818" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\QAx\\projects\\smartbit-robot\\browser\\traces\\3e3342d0-669c-466b-b09d-2acc4fbd7225"}</msg>
+<msg time="2024-12-04T16:12:47.805813" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\QAx\\projects\\smartbit-robot\\browser\\traces\\ad8af6a5-460f-44c5-93ae-9d4796d8ea53"}</msg>
+<msg time="2024-12-04T16:12:48.188310" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\QAx\\projects\\smartbit-robot\\browser\\traces\\ad8af6a5-460f-44c5-93ae-9d4796d8ea53"}</msg>
 <arg>browser=chromium</arg>
 <arg>headless=False</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Create a new playwright Browser with specified options.</doc>
-<status status="PASS" start="2024-12-04T11:14:12.942240" elapsed="0.637595"/>
+<status status="PASS" start="2024-12-04T16:12:47.804819" elapsed="0.384491"/>
 </kw>
 <kw name="New Page" owner="Browser">
-<msg time="2024-12-04T11:14:15.305336" level="INFO">Successfully initialized new page object and opened url: http://localhost:3000</msg>
-<msg time="2024-12-04T11:14:15.306331" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<msg time="2024-12-04T16:12:49.440598" level="INFO">Successfully initialized new page object and opened url: http://localhost:3000</msg>
+<msg time="2024-12-04T16:12:49.441587" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
 <arg>http://localhost:3000</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Open a new Page.</doc>
-<status status="PASS" start="2024-12-04T11:14:13.590822" elapsed="1.716512"/>
+<status status="PASS" start="2024-12-04T16:12:48.214340" elapsed="1.227247"/>
 </kw>
 <kw name="Get Text" owner="Browser">
-<msg time="2024-12-04T11:14:15.509627" level="INFO">Text: 'Faça seu cadastro e venha para a Smartbit!'</msg>
+<msg time="2024-12-04T16:12:49.560135" level="INFO">Text: 'Faça seu cadastro e venha para a Smartbit!'</msg>
 <arg>css=#signup h2</arg>
 <arg>equal</arg>
 <arg>Faça seu cadastro e venha para a Smartbit!</arg>
@@ -35,72 +30,93 @@
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns text attribute of the element found by ``selector``.</doc>
-<status status="PASS" start="2024-12-04T11:14:15.308357" elapsed="0.205273"/>
+<status status="PASS" start="2024-12-04T16:12:49.442591" elapsed="0.117544"/>
 </kw>
 <kw name="Fill Text" owner="Browser">
-<msg time="2024-12-04T11:14:15.520500" level="INFO">Fills the text 'Henrique Araujo' in the given field.</msg>
-<arg>id=name</arg>
-<arg>${account}[name]</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="PASS" start="2024-12-04T11:14:15.516855" elapsed="0.085914"/>
-</kw>
-<kw name="Fill Text" owner="Browser">
-<msg time="2024-12-04T11:14:15.607766" level="INFO">Fills the text 'teste00@teste.com' in the given field.</msg>
+<msg time="2024-12-04T16:12:49.562145" level="INFO">Fills the text 'henrique@teste.com.br' in the given field.</msg>
 <arg>id=email</arg>
-<arg>${account}[email]</arg>
+<arg>henrique@teste.com.br</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="PASS" start="2024-12-04T11:14:15.604764" elapsed="0.083298"/>
+<status status="PASS" start="2024-12-04T16:12:49.561138" elapsed="0.044004"/>
 </kw>
 <kw name="Fill Text" owner="Browser">
-<msg time="2024-12-04T11:14:15.693060" level="INFO">Fills the text '10892375027' in the given field.</msg>
+<msg time="2024-12-04T16:12:49.609160" level="INFO">Fills the text '05214785451' in the given field.</msg>
 <arg>id=document</arg>
-<arg>${account}[document]</arg>
+<arg>05214785451</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="PASS" start="2024-12-04T11:14:15.690060" elapsed="0.076474"/>
+<status status="PASS" start="2024-12-04T16:12:49.607152" elapsed="0.037005"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2024-12-04T11:14:15.774427" level="INFO">Clicks the element 'css=button &gt;&gt; text=Cadastrar'.</msg>
+<msg time="2024-12-04T16:12:49.646145" level="INFO">Clicks the element 'css=button &gt;&gt; text=Cadastrar'.</msg>
 <arg>css=button &gt;&gt; text=Cadastrar</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2024-12-04T11:14:15.772423" elapsed="0.227543"/>
+<status status="PASS" start="2024-12-04T16:12:49.645143" elapsed="0.175025"/>
 </kw>
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2024-12-04T11:14:18.498464" level="INFO">Waited for Element with selector text=Falta pouco para fazer parte da família Smartbit! at state visible</msg>
-<arg>text=Falta pouco para fazer parte da família Smartbit!</arg>
+<msg time="2024-12-04T16:12:49.846177" level="INFO">Waited for Element with selector css=.notice at state visible</msg>
+<arg>css=.notice</arg>
 <arg>visible</arg>
 <arg>5</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2024-12-04T11:14:16.039804" elapsed="2.460655"/>
+<status status="PASS" start="2024-12-04T16:12:49.821179" elapsed="0.024998"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2024-12-04T16:12:51.143749" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-1.png" target="_blank"&gt;&lt;img src="browser/screenshot/fail-screenshot-1.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<msg time="2024-12-04T16:12:51.143749" level="INFO">See also file:///C:/QAx/projects/smartbit-robot/playwright-log.txt for additional details.</msg>
+<msg time="2024-12-04T16:12:51.144751" level="FAIL">Error: locator.elementHandle: Error: strict mode violation: locator('.notice') resolved to 2 elements:
+    1) &lt;p class="notice"&gt;*Faça o pré-cadastro e visite a unidade mais próx…&lt;/p&gt; aka getByText('*Faça o pré-cadastro e visite')
+    2) &lt;div class="notice"&gt;Por favor informe o seu nome completo&lt;/div&gt; aka getByText('Por favor informe o seu nome')
+
+Call log:
+  [2m- waiting for locator('.notice')[22m
+</msg>
+<arg>css=.notice</arg>
+<arg>equal</arg>
+<arg>Por favor informe o seu nome completo</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="FAIL" start="2024-12-04T16:12:49.847167" elapsed="1.436989">Error: locator.elementHandle: Error: strict mode violation: locator('.notice') resolved to 2 elements:
+    1) &lt;p class="notice"&gt;*Faça o pré-cadastro e visite a unidade mais próx…&lt;/p&gt; aka getByText('*Faça o pré-cadastro e visite')
+    2) &lt;div class="notice"&gt;Por favor informe o seu nome completo&lt;/div&gt; aka getByText('Por favor informe o seu nome')
+
+Call log:
+  [2m- waiting for locator('.notice')[22m
+</status>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-12-04T11:14:28.505208" level="INFO">Slept 10 seconds.</msg>
 <arg>10</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-12-04T11:14:18.503451" elapsed="10.002756"/>
+<status status="NOT RUN" start="2024-12-04T16:12:51.285161" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2024-12-04T11:14:12.919229" elapsed="15.589987"/>
+<status status="FAIL" start="2024-12-04T16:12:47.796820" elapsed="3.489346">Error: locator.elementHandle: Error: strict mode violation: locator('.notice') resolved to 2 elements:
+    1) &lt;p class="notice"&gt;*Faça o pré-cadastro e visite a unidade mais próx…&lt;/p&gt; aka getByText('*Faça o pré-cadastro e visite')
+    2) &lt;div class="notice"&gt;Por favor informe o seu nome completo&lt;/div&gt; aka getByText('Por favor informe o seu nome')
+
+Call log:
+  [2m- waiting for locator('.notice')[22m
+</status>
 </test>
 <doc>Cenários de testes de pré-cadastro de clientes</doc>
-<status status="PASS" start="2024-12-04T11:14:09.899716" elapsed="18.970365"/>
+<status status="FAIL" start="2024-12-04T16:12:45.911818" elapsed="5.506532"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Signup">Signup</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="Signup">Signup</stat>
 </suite>
 </statistics>
 <errors>
