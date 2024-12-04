@@ -89,7 +89,6 @@ Campo cpf deve ser obrigatorio
     Sleep    10
 
 Email no formato incorreto
-    [Tags]    required
 
 
     New Browser  browser=chromium    headless=False
@@ -107,5 +106,27 @@ Email no formato incorreto
     ...    css=form .notice    visible    5
     
     Get Text    css=form .notice    equal    Oops! O email informado é inválido
+
+    Sleep    10
+
+CPF no formato incorreto
+    [Tags]    required
+
+
+    New Browser  browser=chromium    headless=False
+    New Page     http://localhost:3000
+
+    Get Text     css=#signup h2     equal     Faça seu cadastro e venha para a Smartbit!
+
+    Fill Text    id=name          Henrique Araujo
+    Fill Text    id=email         henrique@teste.com.br
+    Fill Text    id=document      4588548568a
+
+    Click    css=button >> text=Cadastrar
+
+    Wait For Elements State
+    ...    css=form .notice    visible    5
+    
+    Get Text    css=form .notice    equal    Oops! O CPF informado é inválido
 
     Sleep    10
