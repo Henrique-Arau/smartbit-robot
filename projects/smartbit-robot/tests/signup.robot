@@ -13,11 +13,9 @@ Deve iniciar o cadastro do clientes
 
     start session
     submit signup form    ${account}
+    Verify welcome message
 
-    Wait For Elements State
-    ...    text=Falta pouco para fazer parte da família Smartbit!    visible    5
 
-    Sleep    10
 
 Campo nome deve ser obrigatorio
 
