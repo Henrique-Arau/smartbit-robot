@@ -3,7 +3,8 @@ Documentation        Cenários de testes de pré-cadastro de clientes
 
 Resource        ../resources/Base.resource
 
-
+Test Setup       start session
+Test Teardown    Take Screenshot
 
 
 *** Test Cases ***
@@ -11,10 +12,9 @@ Deve iniciar o cadastro do clientes
 
     ${account}   Get Fake Account
 
-    start session
+ 
     submit signup form    ${account}
     Verify welcome message
-    Take Screenshot
 
 
 
@@ -25,12 +25,8 @@ Campo nome deve ser obrigatorio
     ...    email=henrique@teste.com.br
     ...    cpf=14525845256
 
-    start session
     submit signup form    ${account}
     Notice should be     Por favor informe o seu nome completo
-    Take Screenshot
-
-    Sleep    10
 
 Campo email deve ser obrigatorio
     
@@ -40,12 +36,9 @@ Campo email deve ser obrigatorio
     ...     cpf=41545875841
 
 
-    start session
     submit signup form    ${account}
     Notice should be     Por favor, informe o seu melhor e-mail
-    Take Screenshot
 
-    Sleep    10
 
 Campo cpf deve ser obrigatorio
 
@@ -55,12 +48,9 @@ Campo cpf deve ser obrigatorio
     ...    cpf=${EMPTY}
 
 
-    start session
     submit signup form    ${account}
     Notice should be     Por favor, informe o seu CPF
-    Take Screenshot
 
-    Sleep    10
 
 Email no formato incorreto
 
@@ -70,12 +60,9 @@ Email no formato incorreto
     ...     cpf=15478541542
 
 
-    start session
     submit signup form    ${account}
     Notice should be    Oops! O email informado é inválido
-    Take Screenshot
 
-    Sleep    10
 
 CPF no formato incorreto
     [Tags]    required
@@ -85,11 +72,10 @@ CPF no formato incorreto
     ...     email=henrique@teste.com.br
     ...     cpf=154785415ab
 
-    start session
     submit signup form    ${account}
     Notice should be   Oops! O CPF informado é inválido
-    Take Screenshot
 
-    Sleep    10
+
+
 
 
