@@ -14,6 +14,7 @@ Deve iniciar o cadastro do clientes
     start session
     submit signup form    ${account}
     Verify welcome message
+    Take Screenshot
 
 
 
@@ -27,6 +28,7 @@ Campo nome deve ser obrigatorio
     start session
     submit signup form    ${account}
     Notice should be     Por favor informe o seu nome completo
+    Take Screenshot
 
     Sleep    10
 
@@ -41,6 +43,7 @@ Campo email deve ser obrigatorio
     start session
     submit signup form    ${account}
     Notice should be     Por favor, informe o seu melhor e-mail
+    Take Screenshot
 
     Sleep    10
 
@@ -55,6 +58,7 @@ Campo cpf deve ser obrigatorio
     start session
     submit signup form    ${account}
     Notice should be     Por favor, informe o seu CPF
+    Take Screenshot
 
     Sleep    10
 
@@ -69,6 +73,7 @@ Email no formato incorreto
     start session
     submit signup form    ${account}
     Notice should be    Oops! O email informado é inválido
+    Take Screenshot
 
     Sleep    10
 
@@ -83,6 +88,7 @@ CPF no formato incorreto
     start session
     submit signup form    ${account}
     Notice should be   Oops! O CPF informado é inválido
+    Take Screenshot
 
     Sleep    10
 
