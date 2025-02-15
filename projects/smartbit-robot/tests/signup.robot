@@ -1,9 +1,8 @@
 *** Settings ***
 Documentation        Cenários de testes de pré-cadastro de clientes
 
-Library        Browser
+Resource        ../resources/Base.resource
 
-Resource        ../resources/base.resource
 
 
 
@@ -89,30 +88,4 @@ CPF no formato incorreto
 
     Sleep    10
 
-*** Keywords ***
-start session
 
-    New Browser  browser=chromium    headless=False
-    New Page     http://localhost:3000
-
-submit signup form
-    [Arguments]     ${account}
-
-    Get Text     css=#signup h2    equal     Faça seu cadastro e venha para a Smartbit!
-
-    Fill Text    id=name          ${account}[name]
-    Fill Text    id=email         ${account}[email]
-    Fill Text    id=cpf           ${account}[cpf]
-
-    Click    css=button >> text=Cadastrar
-
-Notice should be
-
-    [Arguments]        ${target}
-
-    ${element}     Set Variable    css=form .notice
-
-    Wait For Elements State
-    ...    css=form .notice    visible    5
-    
-    Get Text    ${element}    equal    ${target}
