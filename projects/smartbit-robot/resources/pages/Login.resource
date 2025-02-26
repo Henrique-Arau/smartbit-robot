@@ -18,10 +18,3 @@ Submit login form
 
     Click    css=button >> text=Entrar
 
-User is logged in
-    [Arguments]    ${email}
-
-    ${element}    Set Variable    css=.logged-user
-
-    Wait For Elements State    ${element}    visible    5
-    Get Text                   ${element}    equal    ${email}
