@@ -19,7 +19,14 @@ Deve logar como Gestor de Academia
 Não deve logar com senha incorreta
     [Tags]     inv_pass
     Go to login page
-    Submit login form    sac@smartbit.com    pwd124
+    Submit login form    sac@smartbit.com    abc124
+    
+    Toast should Base    As credenciais de acesso fornecidas são inválidas. Tente novamente!
+
+Não deve logar com email não cadastrado
+    [Tags]     email_404
+    Go to login page
+    Submit login form    404@smartbit.com    pwd123
     
     Toast should Base    As credenciais de acesso fornecidas são inválidas. Tente novamente!
 
