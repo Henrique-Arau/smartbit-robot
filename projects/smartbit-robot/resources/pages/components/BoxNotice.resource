@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation                  Ações e elementos do componentes de caixa de verificação
+Documentation                  Ações e elementos do componentes de caixa de notificação
 
 Library                        Browser
 

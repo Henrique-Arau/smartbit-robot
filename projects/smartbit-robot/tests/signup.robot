@@ -9,8 +9,14 @@ Test Teardown    Take Screenshot
 
 *** Test Cases ***
 Deve iniciar o cadastro do clientes
+    [Tags]    smoke
 
-    ${account}   Get Fake Account
+    ${account}   Create Dictionary
+    ...        name=Henrique Araujo
+    ...        email=henrique@msn.com
+    ...        cpf=46972857007    
+
+    Delete Account By Email    ${account}[email]
 
  
     submit signup form    ${account}
