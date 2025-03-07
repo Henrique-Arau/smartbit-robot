@@ -8,6 +8,7 @@ Test Setup           start session
 Test Teardown        Take Screenshot
 
 
+
 *** Test Cases ***
 
 Deve logar como Gestor de Academia
@@ -36,3 +37,23 @@ Não deve logar com email não cadastrado
     # Sleep    3
     # ${temp}     Get Page Source
     # Log         ${temp}
+
+Tentativa de login com dados incorretos
+    [Template]           Login with verify notice
+    ${EMPTY}             ${EMPTY}        Os campos email e senha são obrigatórios.
+    ${EMPTY}             pwd123          Os campos email e senha são obrigatórios.
+    sac@smartbit.com     ${EMPTY}        Os campos email e senha são obrigatórios.
+    www.teste.com.br     pwd123          Oops! O email informado é inválido
+    sac&gmail.com        pwd123          Oops! O email informado é inválido
+    adsfgsfsgaf          pwd123          Oops! O email informado é inválido
+    jhghsh87dss7         pwd123          Oops! O email informado é inválido
+    ^&^gh**^&^&          pwd123          Oops! O email informado é inválido
+    test*gmail.com       pwd123          Oops! O email informado é inválido
+    yahoo.com@&*         pwd123          Oops! O email informado é inválido
+*** Keywords ***
+Login with verify notice
+    [Arguments]        ${email}        ${password}        ${output_message}
+
+    Go to login page
+    Submit login form    ${email}    ${password}
+    Notice should be     ${output_message}
